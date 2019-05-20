@@ -1,13 +1,43 @@
 apiVersion: v1
 entries:
+  chaosOperator:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-05-20T19:48:33.998752217Z
+    description: A Helm chart to install litmus chaos operator on Kubernetes
+    digest: 8cb71ea2f59c7e64a8bd3ef457db386f05b79a3051d422f4867a41989d14add9
+    name: chaosOperator
+    urls:
+    - chaosOperator/chaosOperator-0.1.0.tgz
+    version: 0.1.0
+  k8sChaos:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-05-20T19:48:33.999034342Z
+    description: Helm chart for Litmus Kubernetes Chaos Experiments
+    digest: 6ec98df27a53bc044669fdf41d4e3f8c2d197e8bb040ce51372d85db95397525
+    name: k8sChaos
+    urls:
+    - k8sChaos/k8sChaos-0.1.0.tgz
+    version: 0.1.0
   k8schaos:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-20T01:03:08.394701702Z
+    created: 2019-05-20T19:48:33.999336188Z
     description: Helm chart for Litmus Kubernetes Chaos Experiments
     digest: 36573a3c1ecfec4324f2bcb5fbabe40bb105dbba852d05eefa281a69795f68a0
     name: k8schaos
     urls:
     - k8schaos/k8schaos-0.1.0.tgz
     version: 0.1.0
-generated: 2019-05-20T01:03:08.39411587Z
+  litmusInfra:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2019-05-20T19:48:33.999583874Z
+    description: A Helm chart to install litmus infra components on Kubernetes
+    digest: b2303e036b53c766bed81ce9bf09d01d1e4dd80646f4e0c764e6384696e780b0
+    name: litmusInfra
+    urls:
+    - litmusInfra/litmusInfra-0.1.0.tgz
+    version: 0.1.0
+generated: 2019-05-20T19:48:33.998314784Z
