@@ -3,11 +3,11 @@ entries:
   k8schaos:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-05-20T00:53:00.29490966Z
+    created: 2019-05-20T01:03:08.394701702Z
     description: Helm chart for Litmus Kubernetes Chaos Experiments
     digest: 36573a3c1ecfec4324f2bcb5fbabe40bb105dbba852d05eefa281a69795f68a0
     name: k8schaos
     urls:
     - k8schaos/k8schaos-0.1.0.tgz
     version: 0.1.0
-generated: 2019-05-20T00:53:00.294500802Z
+generated: 2019-05-20T01:03:08.39411587Z
