@@ -91,6 +91,7 @@ Hang tight while we grab the latest from your chart repositories...
 ...Successfully got an update from the "litmuschaos" chart repository
 ...Successfully got an update from the "stable" chart repository
 Update Complete. ⎈ Happy Helming!⎈```
+```
 
 - List the available charts 
 
