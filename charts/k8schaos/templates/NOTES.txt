@@ -1,0 +1,1 @@
+## Run "kubectl get chaosexperiment <experiment name> -o yaml" to view experiment details
