@@ -97,22 +97,37 @@ Update Complete. ⎈ Happy Helming!⎈```
 
 ```
 >> helm search chaos-charts
-NAME                    CHART VERSION   APP VERSION     DESCRIPTION                                       
-chaos-charts/k8schaos   0.1.0           1.0             Helm chart for Litmus Kubernetes Chaos Experiments
+NAME                            CHART VERSION   APP VERSION     DESCRIPTION                                                 
+chaos-charts/chaosoperator      0.1.0           1.0             A Helm chart to install litmus chaos operator on Kubernetes 
+chaos-charts/k8schaos           0.1.0           1.0             Helm chart for Litmus Kubernetes Chaos Experiments          
+chaos-charts/litmusinfra        0.1.0           1.0             A Helm chart to install litmus infra components on Kubern...
 ```
 
-- Install the desired chaos chart from litmuchaos repo
+- It is mandatory to install the litmusInfra charts in order to run the litmusbooks
 
 ```
-helm install litmuschaos/k8schaos
-NAME:   kneeling-dingo
-LAST DEPLOYED: Fri May  3 16:20:30 2019
-NAMESPACE: default
+>> helm install litmuschaos/litmusInfra --namespace=litmus
+
+NAME:   wandering-buffalo
+LAST DEPLOYED: Mon May 20 19:19:09 2019
+NAMESPACE: litmus
 STATUS: DEPLOYED
 
 RESOURCES:
-==> v1alpha1/ChaosExperiment
-NAME            AGE
-container-kill  1s
-pod-delete      1s
+==> v1/ServiceAccount
+NAME    SECRETS  AGE
+litmus  1        0s
+
+==> v1beta1/ClusterRole
+NAME    AGE
+litmus  0s
+
+==> v1beta1/ClusterRoleBinding
+NAME    AGE
+litmus  0s
 ```
+Note: Ensure that the infra chart is always installed on litmus namespace
+
+- Install the operator & chaos experiment charts from the litmuchaos repo in 
+the same manner.  
+
