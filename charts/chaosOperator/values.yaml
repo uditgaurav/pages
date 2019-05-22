@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: ksatchit/chaos-operator
-  tag: trial4
+  repository: litmuschaos/chaos-operator
+  tag: ci
   pullPolicy: Always
 
 imagePullSecrets: []
