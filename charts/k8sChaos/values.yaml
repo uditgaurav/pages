@@ -23,7 +23,7 @@ configuration:
     executorImage:        
 
     # Plugin used to view playbooks logs
-    ansibleStdoutCallback: 
+    ansibleStdoutCallback: "default" 
 
     # Total Chaos Period
     totalChaosDuration: 15
