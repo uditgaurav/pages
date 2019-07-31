@@ -3,11 +3,11 @@
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
-  name: {{ include "litmusInfra.fullname" . }}
+  name: {{ include "litmus.fullname" . }}
   labels:
-    name: {{ include "litmusInfra.name" . }}
+    name: {{ include "litmus.name" . }}
     instance: {{ .Release.Name  }}
-    chart: {{ include "litmusInfra.chart" . }}
+    chart: {{ include "litmus.chart" . }}
 rules:
 - apiGroups: ["*"]
   resources: ["*"]

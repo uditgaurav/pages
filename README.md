@@ -3,7 +3,7 @@
 These charts provide the specifications for running chaos experiments on a Kubernetes 
 cluster and are are consumed by the Litmus Chaos Operator. The charts are categorized
 based on the nature of the experiments. For example, chart are catgeorized as : general-K8s
-(k8schaos), storage-specific(openebschaos) and application-specific(mysql)charts.  
+(kubernetes), storage-specific(openebs) and application-specific(mysql)charts.  
 
 The charts install Kubernetes custom resources (CRs) with support for creation-time 
 injection of chaos parameters (defaults present in Values.yaml). To know more about the
@@ -98,22 +98,21 @@ Update Complete. ⎈ Happy Helming!⎈```
 ```
 >> helm search chaos-charts
 NAME                            CHART VERSION   APP VERSION     DESCRIPTION                                                 
-chaos-charts/chaosoperator      0.1.0           1.0             A Helm chart to install litmus chaos operator on Kubernetes 
-chaos-charts/k8schaos           0.1.0           1.0             Helm chart for Litmus Kubernetes Chaos Experiments          
-chaos-charts/litmusinfra        0.1.0           1.0             A Helm chart to install litmus infra components on Kubern...
+chaos-charts/kubernetes         0.1.0           1.0             Helm chart for Litmus Kubernetes Chaos Experiments          
+chaos-charts/litmus             0.1.0           1.0             A Helm chart to install litmus infra components on Kubern...
 ```
 
-- It is mandatory to install the litmusInfra charts in order to run the litmusbooks
+- It is mandatory to install the litmus charts in order to run the litmusbooks
 
 ```
->> helm install litmuschaos/litmusInfra --namespace=litmus
+>> helm install litmuschaos/litmus --namespace=litmus
 
 NAME:   wandering-buffalo
 LAST DEPLOYED: Mon May 20 19:19:09 2019
 NAMESPACE: litmus
 STATUS: DEPLOYED
 
-RESOURCES:
+SOURCES:
 ==> v1/ServiceAccount
 NAME    SECRETS  AGE
 litmus  1        0s
@@ -126,8 +125,8 @@ litmus  0s
 NAME    AGE
 litmus  0s
 ```
-Note: Ensure that the infra chart is always installed on litmus namespace
+Note: Ensure that the litmus chart is always installed on litmus namespace
 
-- Install the operator & chaos experiment charts from the litmuchaos repo in 
+- Install the kubernetes chaos experiment charts from the litmuchaos repo in 
 the same manner.  
 

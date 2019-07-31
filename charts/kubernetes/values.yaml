@@ -1,4 +1,4 @@
-# Default values for k8sChaos 
+# Default values for kubernetes 
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -35,7 +35,7 @@ configuration:
 
     executorLib: 
     executorImage: 
-    ansibleStdoutCallback: 
+    ansibleStdoutCallback: "default" 
 
     # Name of container to be killed
     targetContainer: "nginx" 

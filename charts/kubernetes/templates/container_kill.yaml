@@ -19,9 +19,9 @@ metadata:
   ## Eventually launched chaos litmusbook/job will bear <name>-<hash>
   name: container-kill
   labels:
-    litmuschaos.io/name: {{ include "k8sChaos.name" . }}
+    litmuschaos.io/name: {{ include "kubernetes.name" . }}
     litmuschaos.io/instance: {{ .Release.Name }}
-    helm.sh/chart: {{ include "k8sChaos.chart" . }}
+    helm.sh/chart: {{ include "kubernetes.chart" . }}
 
 description:
   message: |

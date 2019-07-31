@@ -1,21 +1,22 @@
+---
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
-  name: chaosengines.litmuschaos.io
-  labels:
-    app.kubernetes.io/name: {{ include "chaosOperator.name" . }}
+  name: chaosresults.litmuschaos.io
+  labels: 
+    app.kubernetes.io/name: {{ include "litmus.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
-    helm.sh/chart: {{ include "chaosOperator.chart" . }}
+    helm.sh/chart: {{ include "litmus.chart" . }}
   annotations:
     "helm.sh/hook": crd-install
     "helm.sh/hook-delete-policy": "before-hook-creation"
 spec:
   group: litmuschaos.io
   names:
-    kind: ChaosEngine
-    listKind: ChaosEngineList
-    plural: chaosengines
-    singular: chaosengine
+    kind: ChaosResult
+    listKind: ChaosResultList
+    plural: chaosresults
+    singular: chaosresult
   scope: Namespaced
   subresources:
     status: {}
