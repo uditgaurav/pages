@@ -39,7 +39,7 @@ spec:
   ## general app info (namespace, labels) as well as container name which has to undergo
   ## failures. This Component info is generally kept to a minimum and passed as ENV to 
   ## the actual chaos-runner/executor pod/container.
- 
+  id: "k8s-state-container-01" 
   definition: 
 
     labels:
