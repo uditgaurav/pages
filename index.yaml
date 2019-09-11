@@ -3,9 +3,9 @@ entries:
   kubernetes:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-31T03:01:36.277747289Z
+    created: 2019-09-11T02:28:19.398355352Z
     description: Helm chart for Litmus Kubernetes Chaos Experiments
-    digest: 036e60d1bfdee7d02c012a4bbb5997ce5af43ecc3ba61411707ae45a4a07bf46
+    digest: 05a0cf8e21c26020a78c5bd00e68dc63bbacb47e4e316cf8902e1c542195086c
     name: kubernetes
     urls:
     - kubernetes/kubernetes-0.1.0.tgz
@@ -13,11 +13,11 @@ entries:
   litmus:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-07-31T03:01:36.278017409Z
+    created: 2019-09-11T02:28:19.398650237Z
     description: A Helm chart to install litmus infra components on Kubernetes
     digest: 58ef6bae9834776ee869848e8ccd9fb7674d5f969f6daaf805b9e74901274a3c
     name: litmus
     urls:
     - litmus/litmus-0.1.0.tgz
     version: 0.1.0
-generated: 2019-07-31T03:01:36.276768958Z
+generated: 2019-09-11T02:28:19.397957805Z
