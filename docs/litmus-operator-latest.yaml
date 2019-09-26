@@ -59,7 +59,7 @@ spec:
           image: litmuschaos/chaos-operator:latest
           command:
           - chaos-operator
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
             - name: WATCH_NAMESPACE
               value: 
@@ -68,7 +68,8 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
             - name: OPERATOR_NAME
-              value: "chaos-operator"---
+              value: "chaos-operator"
+---
 ---
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
@@ -187,4 +188,3 @@ spec:
     served: true
     storage: true
 ---
-
