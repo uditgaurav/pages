@@ -41,7 +41,7 @@ subjects:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: litmus-operator-ce
+  name: chaos-operator-ce
   namespace: litmus
 spec:
   replicas: 1
