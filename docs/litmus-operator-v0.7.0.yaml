@@ -57,7 +57,7 @@ spec:
       containers:
         - name: chaos-operator
           # Replace this with the built image name
-          image: litmuschaos/chaos-operator:0.7
+          image: litmuschaos/chaos-operator:0.7.0
           command:
           - chaos-operator
           imagePullPolicy: Always
@@ -85,7 +85,6 @@ spec:
     singular: chaosengine
   scope: Namespaced
   subresources:
-    status: {}
   validation:
     openAPIV3Schema:
       properties:
