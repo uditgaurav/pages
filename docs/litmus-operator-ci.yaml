@@ -56,8 +56,8 @@ spec:
       serviceAccountName: litmus
       containers:
         - name: chaos-operator
-          # 'latest' tag corresponds to the latest released image
-          image: litmuschaos/chaos-operator:latest
+          # built off the master branch
+          image: litmuschaos/chaos-operator:ci
           command:
           - chaos-operator
           imagePullPolicy: Always
