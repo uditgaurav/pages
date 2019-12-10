@@ -62,6 +62,10 @@ spec:
           - chaos-operator
           imagePullPolicy: Always
           env:
+            #- name: CHAOS_RUNNER_IMAGE
+            #  value: "litmuschaos/ansible-runner:ci"
+            #- name: CHAOS_MONITOR_IMAGE
+            #  value: "litmuschaos/chaos-exporter:ci"
             - name: WATCH_NAMESPACE
               value: 
             - name: POD_NAME
