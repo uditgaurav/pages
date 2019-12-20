@@ -57,6 +57,7 @@ Browse the hub to pull the latest experiment charts
 Update the value of spec.definition.image in the experiments to the new ansible-runner image 
 
 `gcr.io/<project-id>/ansible-runner:ci`
+
 `kubectl edit chaosexperiment <experiment-name> -n <namespace>`
 
 #### STEP-6: CREATE THE CHAOSENGINE WITH NEW EXECUTOR, MONITOR & LIB IMAGES (if applicable)
