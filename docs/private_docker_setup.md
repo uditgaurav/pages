@@ -101,8 +101,6 @@ spec:
 
 Run the experiment and watch pod/resource status & chaosresult verdict
 
-`kubectl apply -f chaosengine.yaml -n <namepace>`
-
+`kubectl apply -f chaosengine.yaml -n <namespace>`
 `watch -n 1 kubectl get pods --all-namespaces`
-
 `kubectl get chaosresult <engine-name>-<experiment-name> -n <namespace> -o yaml`
