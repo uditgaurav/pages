@@ -56,15 +56,15 @@ spec:
       serviceAccountName: litmus
       containers:
         - name: chaos-operator
-          image: litmuschaos/chaos-operator:1.0.0-RC1
+          image: litmuschaos/chaos-operator:1.0.0
           command:
           - chaos-operator
           imagePullPolicy: Always
           env:
             - name: CHAOS_RUNNER_IMAGE
-              value: "litmuschaos/ansible-runner:1.0.0-RC1"
+              value: "litmuschaos/ansible-runner:1.0.0"
             - name: CHAOS_MONITOR_IMAGE
-              value: "litmuschaos/chaos-exporter:1.0.0-RC1"
+              value: "litmuschaos/chaos-exporter:1.0.0"
             - name: WATCH_NAMESPACE
               value: 
             - name: POD_NAME
