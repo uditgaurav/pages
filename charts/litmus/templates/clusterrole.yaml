@@ -9,6 +9,6 @@ metadata:
     instance: {{ .Release.Name  }}
     chart: {{ include "litmus.chart" . }}
 rules:
-- apiGroups: ["*"]
-  resources: ["*"]
-  verbs: ["*"]
+- apiGroups: ["","apps","batch","litmuschaos.io"]
+  resources: ["pods","jobs","deployments","daemonsets","statefulsets","events","configmaps","services","chaosengines","chaosexperiments","chaosresults"]
+  verbs: ["get","create","update","patch","delete","list","watch","deletecollection"]
