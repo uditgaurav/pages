@@ -63,7 +63,7 @@ spec:
           imagePullPolicy: Always
           env:
             - name: CHAOS_RUNNER_IMAGE
-              value: "litmuschaos/ansible-runner:ci"
+              value: "litmuschaos/chaos-runner:ci"
             - name: CHAOS_MONITOR_IMAGE
               value: "litmuschaos/chaos-exporter:ci"
             - name: WATCH_NAMESPACE
@@ -89,7 +89,6 @@ spec:
     singular: chaosengine
   scope: Namespaced
   subresources:
-    status: {}
   validation:
     openAPIV3Schema:
       properties:
@@ -107,6 +106,94 @@ spec:
           type: object
         spec:
           type: object
+          properties:
+            monitoring:
+              type: boolean
+            jobCleanUpPolicy:
+              type: string
+              pattern: ^(delete|retain)$
+              # alternate ways to do this in case of complex pattern matches
+              #oneOf:
+              #  - pattern: '^delete$'
+              #  - pattern: '^retain$'
+            annotationCheck:
+              type: string
+              pattern: ^(true|false)$
+            appinfo:
+              type: object
+              properties:
+                appkind:
+                  type: string
+                  pattern: ^(deployment|statefulset|daemonset)$
+                applabel:
+                  type: string
+                appns:
+                  type: string
+            auxiliaryAppInfo:
+              type: string
+            engineState: 
+              type: string
+              pattern: ^(active|stop)$
+            chaosServiceAccount:
+              type: string
+            components:
+              type: object
+              properties:
+                monitor:
+                  type: object
+                  properties:
+                    image:
+                      type: string
+                runner:
+                  type: object
+                  properties:
+                    image:
+                      type: string
+                    type:
+                      type: string
+                      pattern: ^(go|ansible)$
+            experiments:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  spec:
+                    type: object
+                    properties:
+                      components: 
+                        type: object
+                        properties:
+                          env:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                value:
+                                  type: string
+                          configMaps:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                mountPath:
+                                  type: string
+                          secrets:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                name: 
+                                  type: string
+                                mountPath:
+                                  type: string
+
+
         status:
           type: object
   version: v1alpha1
@@ -146,6 +233,93 @@ spec:
           type: object
         spec:
           type: object
+          properties:
+            definition:
+              type: object
+              properties:
+                args:
+                  type: array
+                  items:
+                    type: string
+                command:
+                  type: array
+                  items:
+                    type: string
+                env:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      value:
+                        type: string
+                image:
+                  type: string
+                labels:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                scope:
+                  type: string
+                  pattern: ^(Namespaced|Cluster)$
+                permissions:
+                  type: array
+                  items:
+                    type: object
+                    minProperties: 3
+                    required:
+                    - apiGroups
+                    - resources
+                    - verbs
+                    properties:
+                      apiGroups:
+                        type: array
+                        items:
+                          type: string
+                      resources:
+                        type: array
+                        items:
+                          type: string
+                      verbs:
+                        type: array
+                        items:
+                          type: string
+                      resourceNames:
+                        type: array
+                        items:
+                          type: string
+                      nonResourceURLs:
+                        type: array
+                        items:
+                          type: string
+                configmaps:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        allowEmptyValue: false
+                        minLength: 1
+                      mountPath:
+                        type: string
+                        allowEmptyValue: false
+                        minLength: 1
+                secrets:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                        allowEmptyValue: false
+                        minLength: 1
+                      mountPath:
+                        type: string
+                        allowEmptyValue: false
+                        minLength: 1
         status:
           type: object
   version: v1alpha1
@@ -192,4 +366,3 @@ spec:
   - name: v1alpha1
     served: true
     storage: true
----
