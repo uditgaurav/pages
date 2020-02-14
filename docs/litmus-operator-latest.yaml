@@ -133,7 +133,7 @@ spec:
               type: string
             engineState: 
               type: string
-              pattern: ^(active|stop)$
+              pattern: ^(active|stop|initialized|stopped)$
             chaosServiceAccount:
               type: string
             components:
