@@ -1,4 +1,4 @@
-# CHAOS INSTALER & EXPERIMENT CHARTS 
+# CHAOS INSTALLER & EXPERIMENT CHARTS 
 
 These charts provide the specifications for running chaos experiments on a Kubernetes 
 cluster and are are consumed by the Litmus Chaos Operator. The charts are categorized
