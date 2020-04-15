@@ -57,13 +57,13 @@ spec:
       containers:
         - name: chaos-operator
           # built off the 1.3.x branch
-          image: litmuschaos/chaos-operator:1.3.0-RC1
+          image: litmuschaos/chaos-operator:1.3.0
           command:
           - chaos-operator
           imagePullPolicy: Always
           env:
             - name: CHAOS_RUNNER_IMAGE
-              value: "litmuschaos/chaos-runner:1.3.0-RC1"
+              value: "litmuschaos/chaos-runner:1.3.0"
             - name: WATCH_NAMESPACE
               value: 
             - name: POD_NAME
