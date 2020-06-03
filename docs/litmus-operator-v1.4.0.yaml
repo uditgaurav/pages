@@ -58,7 +58,7 @@ spec:
       serviceAccountName: litmus
       containers:
         - name: chaos-operator
-          image: litmuschaos/chaos-operator:1.4.0
+          image: litmuschaos/chaos-operator:1.4.1
           command:
             - chaos-operator
           imagePullPolicy: Always
